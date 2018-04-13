@@ -1,0 +1,15 @@
+- Noget med LEGO
+- 'Er den her bunding godkendt?'
+- Øveprogram til eksamen
+- Penis-approksimationsprogram (med en liste af char som input)
+- Prügel
+- 'Hvilken bar skal jeg på?'
+- 'Hvad for noget mad skal jeg have?'
+- 'Hvilken øl skal jeg have?'
+- 'Skal jeg score hende/ham der?'
+    - Bedøm personen på en skala / flere skalaer
+        - Den indsendte bedømmelse udregner sandsynligheden for, man har lyst til at score vedkommende.
+            - Hvis bedømmelsen viser, man har lyst til det, så foreslår programmet, man burde score vedkommende.
+                - Hvis programmet foreslår, man burde score vedkommende, så kommer den med en frisk scorereplik.
+- Scorerepliksprogram
+    - Foreslår en scorereplik
