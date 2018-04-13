@@ -1,0 +1,84 @@
+/*
+* Reset of css & disable horizontal scroll
+*/
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: "AU Passata Normal","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #E9E9E9;
+    max-height: 100%
+}
+
+
+/*
+ * HEADER
+ */
+
+header {
+  background-color: #cFcFcF;
+  height: 35px;
+  width: 100%;
+  opacity: .85;
+  padding: 40px 50px 40px 50px;
+  margin-bottom: 10px;
+
+    top: 0; /* Position the navbar at the top of the page */
+}
+
+
+.menu {
+  float: right;
+  margin-top: 8px;
+  padding-right: 80px;
+
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li + li {
+  margin-left: 35px;
+}
+
+.menu li a {
+  color: #212121;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  color: #1f9e75;
+}
+
+header img {
+    width: 8%;
+}
+
+/*
+ * container of main content
+ */
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 20px 0 20px;
+}
+
+
+.login {
+    text-align: center;
+    margin: 8% auto;
+}
+
+.login p {
+    margin-top: 20px;
+}
+
+
+

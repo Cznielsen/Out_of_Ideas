@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AUHack Flask Workshop</title>
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home_page') }}"><img src="{{ url_for('static', filename='images/AUHack_logo.png') }}"></a>
+        <div class="menu">
+            <ul>
+                <li><a href="{{ url_for('hello_world') }}">Hello World</a></li>
+                <li><a href="{{ url_for('home_page') }}">Home</a></li>
+                <li><a href="{{ url_for('settings_page') }}">Settings</a></li>
+                <li><a href="{{ url_for('logout') }}">Log out</a></li>
+            </ul>
+
+        </div>
+    </header>
+    <div class="container">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>
