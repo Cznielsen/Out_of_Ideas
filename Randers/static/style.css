@@ -31,7 +31,7 @@ header {
     background-color: dimgray;
     height: 35px;
     width: 100%;
-    padding: 20px 30px 50px 50px;
+    padding: 20px 30px 70px 50px;
 
     top: 0; /* Position the navbar at the top of the page */
 }
@@ -67,4 +67,14 @@ header img {
     width: 16%;
     float: left;
     padding-right: 70px;
+}
+
+.gallery_img {
+    width: auto;
+    height: 500px;
+}
+
+.gallery_parent {
+    padding: 80px 80px 20px 80px;
+
 }

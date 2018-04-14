@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Fortællinger fra Randers{% endblock %}
 {% block body %}
-Nothin' so far
+    <div class="gallery_parent">
+        <a href="{{ url_for('gallery') }}" title="Another one!">
+            <img src="{{ url_for('static', filename=path) }}" class="gallery_img">
+        </a>
+    </div>
 {% endblock %}

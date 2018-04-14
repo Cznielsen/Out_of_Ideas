@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request
+from auxillary import get_image
 
 app = Flask(__name__)
 
@@ -16,7 +17,8 @@ def home():
 @app.route('/gallery/', methods=['GET', 'POST'])
 def gallery():
     if request.method == 'GET':
-        return render_template('gallery.html')
+        meme_path = get_image.get_meme_path("static/images/randers-memes/")
+        return render_template('gallery.html', path=meme_path)
     if request.method == 'POST':
         pass
 
