@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Er Jeg i Randers?">
+    <meta name="author" content="Mokaï-bois">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/icons/byskilt.jpg') }}">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+    <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/icons/byskilt.jpg') }}"></a>
+    <div class="menu">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Hjem</a></li>
+            <li><a href="{{ url_for('gallery') }}">Galleri</a></li>
+        </ul>
+    </div>
+</header>
+<script src="js/scripts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

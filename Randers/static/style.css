@@ -1,84 +1,70 @@
 /*
 * Reset of css & disable horizontal scroll
 */
+
 html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  font-family: "AU Passata Normal","Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: "Comic Sans MS", sans-serif;
+    color: white;
 }
 
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-    background-color: #E9E9E9;
-    max-height: 100%
+    background-color: black;
+    max-height: 100%;
+    text-align: center;
 }
 
-
-/*
- * HEADER
- */
+.centertext {
+    position: absolute;
+    top: 50%;
+    align-items: center;
+    font-size: 80px;
+    vertical-align: middle;
+}
 
 header {
-  background-color: #cFcFcF;
-  height: 35px;
-  width: 100%;
-  opacity: .85;
-  padding: 40px 50px 40px 50px;
-  margin-bottom: 10px;
+    color: white;
+    background-color: dimgray;
+    height: 35px;
+    width: 100%;
+    padding: 20px 30px 50px 50px;
 
     top: 0; /* Position the navbar at the top of the page */
 }
 
-
 .menu {
-  float: right;
-  margin-top: 8px;
-  padding-right: 80px;
+    color: white;
+    float: left;
+    margin-top: 8px;
+    padding-left: 30px;
+    font-size: 30px;
 
 }
 
 .menu li {
-  display: inline;
+    display: inline;
+    margin-left: 35px;
 }
 
 .menu li + li {
-  margin-left: 35px;
+    padding-left: 40px;
 }
 
 .menu li a {
-  color: #212121;
-  text-decoration: none;
+    color: #212121;
+    text-decoration: none;
 }
 
 .menu li a:hover {
-  color: #1f9e75;
+    color: fuchsia;
 }
 
 header img {
-    width: 8%;
+    width: 16%;
+    float: left;
+    padding-right: 70px;
 }
-
-/*
- * container of main content
- */
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px 20px 0 20px;
-}
-
-
-.login {
-    text-align: center;
-    margin: 8% auto;
-}
-
-.login p {
-    margin-top: 20px;
-}
-
-
-
