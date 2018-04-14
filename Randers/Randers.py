@@ -14,13 +14,18 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/gallery/', methods=['GET', 'POST'])
+@app.route('/gallery/')
 def gallery():
-    if request.method == 'GET':
         meme_path = get_image.get_meme_path("static/images/randers-memes/")
         return render_template('gallery.html', path=meme_path)
-    if request.method == 'POST':
-        pass
+
+@app.route('/ja/')
+def ja():
+    return render_template('ja.html')
+
+@app.route('/nej/')
+def nej():
+    return render_template('nej.html')
 
 
 
