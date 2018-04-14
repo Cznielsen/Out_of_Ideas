@@ -9,7 +9,6 @@ app.secret_key = os.urandom(24)
 
 conn = Firebase_conn()
 
-
 @app.route('/')
 def hello_world():
     if session.get('username'):
