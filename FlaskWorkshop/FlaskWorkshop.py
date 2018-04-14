@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for, abort, session, make_response
 import os
+import rn
 
 from connection import Firebase_conn
 
@@ -105,9 +106,35 @@ def d1mini_with_auth():
     return make_response("You are not Andy", 403)
 
 
+@app.route('/random/', methods=['GET', 'POST'])
+def random():
+    if session.get('username'):
+        if request.method == 'GET':
+            app.logger.error(session.get('username'))
+            return render_template('random.html')
+        if request.method == 'POST':
+            num = rn.rn(0, 10)
+            app.logger.error(session.get('username'))
+            return redirect(url_for('randomnum', number=num))
+    return redirect(url_for('login'))
+
+@app.route('/random/<number>', methods=['GET', 'POST'])
+def randomnum(number):
+    if session.get('username'):
+        if request.method == 'GET':
+            app.logger.error(session.get('username'))
+            return render_template('random.html', num="The number is " + str(number))
+        if request.method == 'POST':
+            num = rn.rn(0, 10)
+            app.logger.error(session.get('username'))
+            return redirect(url_for('randomnum', number=num))
+    return redirect(url_for('login'))
+
 @app.route('/api/getinfo', methods=['GET'])
 def get_info():
     return "The d1mini information"
+
+
 
 
 if __name__ == '__main__':

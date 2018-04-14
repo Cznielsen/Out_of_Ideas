@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <h1>Random</h1>
+    <p>Generate a random number</p>
+    <script>
+        var num = {{ num }}
+    </script>
+
+            <form action="" method=post>
+                <button class="submit" type=submit>Generate</button>
+                <p>{{num}}</p>
+            </form>
+
+{% endblock %}
