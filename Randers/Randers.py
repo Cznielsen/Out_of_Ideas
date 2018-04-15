@@ -33,6 +33,10 @@ def nej():
 @app.route('/.well-known/acme-challenge/WXhrqY6bBoiAIDNcc20Svkq4NzBoF1ModlIX6sMnzOg/')
 def cert():
     return redirect(url_for('static', filename='cert'))
+	
+@app.route('/prugel/')
+def prugel():
+    return render_template('prugel.html')
 
 
 
