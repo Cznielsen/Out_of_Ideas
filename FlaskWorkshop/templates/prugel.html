@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>prugel</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/static/prugel.css"\>
+		<script src="{{ url_for('static', filename='jquery-1.7.min.js') }}"></script>
+	</head>
+	<body>
+		<h1>Prügel</h1>
+		<p id="playtext">Player amount</p>
+		<img class="preload" src="/static/images/cards.png" id="preload"/>
+			<input id="players"></input><br>
+			<button id="start">START</button>
+		<div id="card-table">
+		</div>
+		<script src="/static/cards.js"></script>
+		<script src="/static/prugel.js"></script>
+	</body>
+</html>
