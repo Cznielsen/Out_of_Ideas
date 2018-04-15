@@ -6,13 +6,14 @@ deck = new cards.Deck();
 sm = new cards.Deck({faceUp:true});
 rh = new cards.Deck({faceUp:true});
 discardpile = new cards.Deck({faceUp:true});
-deck.y -= 100;
-discardpile.y -= 100;
 discardpile.x += 250;
-sm.y -= 100;
 sm.x += -250;
-rh.y -= 100;
 rh.x += -175;
+var y_offset = 250;
+discardpile.y -= y_offset;
+deck.y -= y_offset;
+sm.y -= y_offset;
+rh.y -= y_offset;
 
 /***
 Resets the game board
@@ -41,10 +42,18 @@ function endGame() {
 	var endString = "Game over, number of wins:\n";
 	for (var i = 0; i < player_count; i++){endString += hands[i].name + ": " + hands[i].wins + "\n";}
 	endString += "Start a new game?";
-	if(confirm(endString)) {
+	var newgame = confirm(endString);
+	if(newgame) {
 		resetGame();
-		player_count = prompt("Please enter amount of players:\n(limited to maximum 10)");
-		newGame();
+		$(".form").show()
+		for (var x = 0; x < 10; x++) {
+			if (x < document.getElementById('players').value){
+			$('#ply'+x).show();
+			}
+			else {
+			$('#ply'+x).hide();
+			}
+		}
 	} else {
 		alert("Thank you for playing!");
 	}
@@ -54,12 +63,11 @@ function endGame() {
 Initialises new game
 ***/
 function newGame(){
-	//Corrects player_count if too high or low
-    if (player_count > 10) {player_count = 10}
-    if (player_count < 1) {player_count = 1}
+	var smp = false;
+	if (document.getElementById('mogens').value == 1) {smp = true}
 	
 	//Prompts user to start game as Spar Mogens Prügel
-	cards.init({table: tab, smp: confirm("Spar mogens prügel?\n(OK for yes, cancel for no)"), acesHigh: true});
+	cards.init({table: tab, smp: smp, acesHigh: true});
 	
 	//Adds all cards to the deck and renders the deck for the first time.
 	deck.addCards(cards.all);
@@ -75,7 +83,7 @@ function newGame(){
 		hands[i].sum = 0;
 		hands[i].minSum = 0;
 		hands[i].wins = 0;
-		hands[i].name = prompt("Please enter name of player"+(i+1),"Player"+(i+1))
+		hands[i].name = document.getElementById("ply"+i).value;
 		hands[i].click(function(card){
 		if ((deck.topCard().faceUp == true) && (deck.topCard().suit == 'd' || deck.topCard().suit == 'h') && (((deck.topCard().rank + card.container.minSum) < 26)) || (deck.topCard().rank == 14 && (card.container.minSum+1 < 26))) {
 				drawCard(card.container,deck.topCard());
@@ -204,7 +212,7 @@ function clearHand(hand) {
 
 
 function checkEnd() {
-	if (deck.length == 0) {endGame(); return true} else {return false}
+	if (deck.length == 0) {endGame()} else {return false}
 }
 
 function nextTurn() {
@@ -216,9 +224,8 @@ hands[turncount].score.style.color = "red";
 
 $('#start').click(function(){
 	player_count = document.getElementById('players').value;
-	$('#start').hide();
 	$('#playtext').hide();
-	$('#players').hide();
+	$('.form').hide();
 	newGame();
 });
 
