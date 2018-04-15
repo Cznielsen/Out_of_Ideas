@@ -8,10 +8,50 @@
 	</head>
 	<body>
 		<h1>Prügel</h1>
-		<p id="playtext">Player amount</p>
+		<p class="form">Spar mogens prügel?</p>
+			<select id="mogens" class="form">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select>
+		<p id="playtext" class="form">Player amount</p>
 		<img class="preload" src="/static/images/cards.png" id="preload"/>
-			<input id="players"></input><br>
-			<button id="start">START</button>
+			<select onchange="playerUpdate(this.value)" id="players" class="form">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select><br>
+			<p class="form">Player names:</p>
+			<input type="text" id="ply0" class="form"><br>
+			<input type="text" id="ply1" class="form"><br>
+			<input type="text" id="ply2" class="form"><br>
+			<input type="text" id="ply3" class="form"><br>
+			<input type="text" id="ply4" class="form"><br>
+			<input type="text" id="ply5" class="form"><br>
+			<input type="text" id="ply6" class="form"><br>
+			<input type="text" id="ply7" class="form"><br>
+			<input type="text" id="ply8" class="form"><br>
+			<input type="text" id="ply9" class="form"><br>
+			<button id="start" class="form">START</button>
+			<script>
+			for (var x = 1; x < 10; x++) {$('#ply'+x).hide();}
+			function playerUpdate(num){
+			for (var x = 0; x < 10; x++) {
+					if (x < num){
+					$('#ply'+x).show();
+					}
+					else {
+					$('#ply'+x).hide();
+					}
+				}			
+			}
+			</script>
 		<div id="card-table">
 		</div>
 		<script src="/static/cards.js"></script>
