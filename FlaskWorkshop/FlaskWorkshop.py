@@ -118,6 +118,10 @@ def random():
             return redirect(url_for('randomnum', number=num))
     return redirect(url_for('login'))
 
+@app.route('/prugel/')
+def download():
+    return render_template('prugel.html')
+
 @app.route('/random/<number>', methods=['GET', 'POST'])
 def randomnum(number):
     if session.get('username'):
