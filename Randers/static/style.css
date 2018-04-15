@@ -1,0 +1,80 @@
+/*
+* Reset of css & disable horizontal scroll
+*/
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: "Comic Sans MS", sans-serif;
+    color: white;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: black;
+    max-height: 100%;
+    text-align: center;
+}
+
+.centertext {
+    position: absolute;
+    top: 50%;
+    align-items: center;
+    font-size: 80px;
+    vertical-align: middle;
+}
+
+header {
+    color: white;
+    background-color: dimgray;
+    height: 35px;
+    width: 100%;
+    padding: 20px 30px 70px 50px;
+
+    top: 0; /* Position the navbar at the top of the page */
+}
+
+.menu {
+    color: white;
+    float: left;
+    margin-top: 8px;
+    padding-left: 30px;
+    font-size: 30px;
+
+}
+
+.menu li {
+    display: inline;
+    margin-left: 35px;
+}
+
+.menu li + li {
+    padding-left: 40px;
+}
+
+.menu li a {
+    color: #212121;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: fuchsia;
+}
+
+header img {
+    width: 16%;
+    float: left;
+    padding-right: 70px;
+}
+
+.gallery_img {
+    width: auto;
+    height: 500px;
+}
+
+.gallery_parent {
+    padding: 80px 80px 20px 80px;
+
+}

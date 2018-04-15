@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Rend Os!{% endblock %}
+{% block body %}
+    <audio autoplay>
+        <source src="{{ url_for('static', filename="rend-os.mp3") }}" type="audio/mpeg">
+    </audio>
+    <p class="text-center" style="font-size: 300px; vertical-align: middle">NEJ</p>
+{% endblock %}
