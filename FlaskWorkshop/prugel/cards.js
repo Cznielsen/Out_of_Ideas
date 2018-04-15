@@ -9,11 +9,11 @@ var cards = (function() {
 		acesHigh : false,
 		cardsUrl : 'img/cards.png',
 		blackJoker : false,
-		redJoker : false
+		redJoker : false,
+		smp: false
 	};
 	var zIndexCounter = 1;
 	var all = []; //All the cards created.
-	
 	function mouseEvent(ev) {
 		var card = $(this).data('card');
 		if (card.container) {
@@ -38,11 +38,17 @@ var cards = (function() {
 		if ($(opt.table).css('position') == 'static') {
 			$(opt.table).css('position', 'relative');
 		}
-		for (var i = start; i <= end; i++) {
-			all.push(new Card('h', i, opt.table));
-			all.push(new Card('s', i, opt.table));
-			all.push(new Card('d', i, opt.table));
-			all.push(new Card('c', i, opt.table));
+		if (opt.smp) {
+			for (var i = start; i <= end*4; i++) {
+				all.push(new Card('s', 11, opt.table));
+			}
+		}else {
+			for (var i = start; i <= end; i++) {
+				all.push(new Card('h', i, opt.table));
+				all.push(new Card('s', i, opt.table));
+				all.push(new Card('d', i, opt.table));
+				all.push(new Card('c', i, opt.table));
+			}
 		}
 		if (opt.blackJoker) {
 			all.push(new Card('bj', 0, opt.table));
@@ -53,6 +59,14 @@ var cards = (function() {
 		
 		$('.card').click(mouseEvent);
 		shuffle(all);
+	}
+	
+	function cleanTable() {
+		while (all.length > 0) {
+			all.pop();
+		}
+		$('.card').remove();
+
 	}
 
     function shuffle(deck) {
@@ -333,7 +347,8 @@ var cards = (function() {
 		Deck : Deck,
 		Hand : Hand,
 		Pile : Pile,
-		shuffle: shuffle
+		shuffle: shuffle,
+		cleanTable: cleanTable
 	};
 })();
 
