@@ -157,6 +157,7 @@ deck.click(function(card){
 			discardpile.addCard(card);
 			discardpile.render();
 			deck.render();
+			nextTurn();
 		}
 	}
 	else if (card === deck.topCard() && card.faceUp == true) {
