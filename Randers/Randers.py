@@ -19,7 +19,7 @@ def gallery():
     meme_path = get_image.get_meme_path("static/images/randers-memes/")
     return render_template('gallery.html', path=meme_path)
 
-"""
+
 @app.route('/ja/')
 def ja():
     return render_template('ja.html')
@@ -28,7 +28,7 @@ def ja():
 @app.route('/nej/')
 def nej():
     return render_template('nej.html')
-"""
+
 
 @app.route('/.well-known/acme-challenge/WXhrqY6bBoiAIDNcc20Svkq4NzBoF1ModlIX6sMnzOg/')
 def cert():
